@@ -8,19 +8,19 @@ pipeline{
 		}
 		stage('Restore'){
 			steps{
-				sh 'dotnet restore'
+				sh 'dotnet restore FirstExercice.csproj'
 				echo 'packages restores Successfully'
 			}
 		}
 		stage('Build'){
 			steps{
-				sh 'dotnet build --Configuration Release'
+				sh 'dotnet build FirstExercice.csproj'
 				echo 'Build completed'
 			}
 		}
 		stage('Publish'){
 			steps{
-				sh 'dotnet publish'
+				sh 'dotnet publish FirstExercice.csproj'
 			}
 		}
 	}
