@@ -8,19 +8,19 @@ pipeline{
 		}
 		stage('Restore'){
 			steps{
-				bat 'dotnet restore'
+				sh 'dotnet restore'
 				echo 'packages restores Successfully'
 			}
 		}
 		stage('Build'){
 			steps{
-				bat 'dotnet build --Configuration Release'
+				sh 'dotnet build --Configuration Release'
 				echo 'Build completed'
 			}
 		}
 		stage('Publish'){
 			steps{
-				bat 'dotnet publish'
+				sh 'dotnet publish'
 			}
 		}
 	}
