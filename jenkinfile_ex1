@@ -1,0 +1,27 @@
+pipeline{
+	agent any
+	stages{
+		stage('Checkout'){
+			steps{
+				checkout scm
+			}
+		}
+		stage('Restore'){
+			steps{
+				bat 'dotnet restore
+				echo 'packages restores Successfully'
+			}
+		}
+		stage('Build'){
+			steps{
+				bat 'dotnet build --Configuration Release'
+				echo 'Build completed'
+			}
+		}
+		stage('Publish'){
+			steps{
+				bat 'dotnet publish'
+			}
+		}
+	}
+}
