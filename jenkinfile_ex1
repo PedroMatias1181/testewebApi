@@ -8,7 +8,7 @@ pipeline{
 		}
 		stage('Restore'){
 			steps{
-				bat 'dotnet restore
+				bat 'dotnet restore'
 				echo 'packages restores Successfully'
 			}
 		}
